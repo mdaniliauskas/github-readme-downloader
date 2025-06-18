@@ -7,3 +7,5 @@ readmes/*
 # Mas mantém a pasta readmes no repositório
 documents/
 !readmes/.gitkeep
+
+apoio/

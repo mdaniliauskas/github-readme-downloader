@@ -66,6 +66,29 @@ github-readme-downloader/
 python baixar_readmes.py -u mdaniliauskas -o ./meus_readmes -l meu_log.txt -d 1
 ```
 
+## 🐳 Uso com Docker
+
+1. **Construa a imagem Docker:**
+   ```sh
+   docker build -t github-readme-downloader .
+   ```
+2. **Execute o container interativamente:**
+   ```sh
+   docker run -it --rm github-readme-downloader
+   ```
+   O script pedirá o nome de usuário do GitHub normalmente.
+
+3. **Passe argumentos diretamente:**
+   ```sh
+   docker run --rm github-readme-downloader -u mdaniliauskas --loglevel DEBUG
+   ```
+
+4. **Mapeie volumes para acessar arquivos gerados:**
+   ```sh
+   docker run --rm -v %cd%/readmes:/app/readmes -v %cd%/relatorio_readmes.csv:/app/relatorio_readmes.csv github-readme-downloader -u mdaniliauskas
+   ```
+   > No Linux/Mac, use `$(pwd)` no lugar de `%cd%`.
+
 ## 🧪 Testes Automatizados
 
 O projeto conta com testes unitários para os principais módulos, garantindo confiabilidade e facilitando futuras evoluções.

@@ -3,16 +3,11 @@
 ![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
 ![GitHub](https://img.shields.io/badge/GitHub-API-black?logo=github)
 ![tqdm](https://img.shields.io/badge/tqdm-barra%20de%20progresso-green)
+![Testes](https://img.shields.io/badge/testes-automatizados-success)
 
 ## ✨ Motivação
 
-Estou revisitando todos os repositórios do meu perfil no GitHub para:
-
-- 🔍 Verificar quais repositórios possuem ou não um arquivo README.
-- 📥 Baixar todos os READMEs disponíveis para análise local.
-- 📝 Padronizar, reescrever e melhorar a documentação dos meus projetos.
-
-Essa necessidade me levou a criar um script automatizado, que pode ser útil para qualquer pessoa que queira organizar e revisar seus próprios repositórios.
+Este projeto nasceu de uma necessidade prática e pode ser útil para qualquer pessoa que queira organizar e melhorar a documentação dos próprios repositórios. Compartilho aqui a solução para que outros possam se beneficiar, adaptar e contribuir conforme suas necessidades.
 
 ## 🚀 Sobre o Projeto
 
@@ -24,6 +19,7 @@ Este projeto foi evoluído para uma arquitetura orientada a objetos e modular, f
 4. Exibir uma barra de progresso visual durante o processo.
 5. Permitir fácil adaptação para qualquer usuário do GitHub, inclusive via argumentos de linha de comando.
 6. Tratar erros de rede, usuário inexistente e limitações de API.
+7. Garantir confiabilidade por meio de testes automatizados.
 
 ### Estrutura do Projeto
 
@@ -33,11 +29,12 @@ github-readme-downloader/
 ├── github_api.py             # Classe para comunicação com a API do GitHub
 ├── downloader.py             # Classe para download e salvamento dos READMEs
 ├── models.py                 # Classes de domínio (ex: Repository)
+├── tests/                    # Testes automatizados
 ├── README.md
 └── requirements.txt
 ```
 
-> **Mentalidade:** Resolvi um problema real do meu dia a dia, criando uma solução que pode ajudar outras pessoas a organizar e melhorar seus próprios projetos. Isso demonstra minha capacidade de identificar necessidades, automatizar tarefas e compartilhar conhecimento.
+> **Mentalidade:** Este projeto nasceu de uma necessidade prática e foi desenvolvido pensando em facilitar a vida de quem, assim como eu, deseja organizar e melhorar a documentação dos próprios repositórios. Compartilho a solução de forma aberta para que outros possam se beneficiar, adaptar e contribuir conforme suas necessidades.
 
 ## 🛠️ Como Usar
 
@@ -50,7 +47,7 @@ github-readme-downloader/
    ```bash
    pip install -r requirements.txt
    # ou
-   pip install requests tqdm
+   pip install requests tqdm pytest coverage
    ```
 3. **Execute o script:**
    ```bash
@@ -67,16 +64,25 @@ github-readme-downloader/
 python baixar_readmes.py -u mdaniliauskas -o ./meus_readmes -l meu_log.txt -d 1
 ```
 
-## 💡 Funcionalidades
+## 🧪 Testes Automatizados
 
-- Arquitetura orientada a objetos e modular.
-- Organização do código em módulos e classes.
-- Barra de progresso com tqdm.
-- Logging estruturado e tratamento de exceções.
-- Checagem de README em diferentes variações de nome e branch.
-- Delay configurável entre requisições para evitar rate limit.
-- Mensagem clara caso o usuário não exista.
-- Log final separado e visual para facilitar ações futuras.
+O projeto conta com testes unitários para os principais módulos, garantindo confiabilidade e facilitando futuras evoluções.
+
+- Para rodar todos os testes:
+  ```bash
+  python -m unittest discover -v -s tests
+  ```
+- Para verificar a cobertura de testes:
+  ```bash
+  python -m coverage run -m unittest discover -s tests
+  python -m coverage report -m
+  ```
+
+Os testes cobrem cenários de criação de objetos, integração com a API do GitHub e geração de logs, assegurando que as principais funcionalidades estejam sempre funcionando corretamente.
+
+## 💡 Confiabilidade
+
+A aplicação foi desenvolvida com foco em qualidade, clareza e robustez. A presença de testes automatizados e cobertura de código garante que as funcionalidades principais estejam protegidas contra regressões, tornando o projeto confiável tanto para uso pessoal quanto para colaboração aberta.
 
 ## 🤖 Apoio do GitHub Copilot
 

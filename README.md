@@ -140,6 +140,19 @@ Commits fora do padrão serão rejeitados pelo CI.
 
 Para mais detalhes, consulte o arquivo `.cz.yaml` e a documentação do Commitizen.
 
+## 📚 Documentação
+
+A documentação completa do projeto é gerada automaticamente com Sphinx e pode ser consultada localmente:
+
+```sh
+pip install -r requirements.txt
+cd docs
+C:/Python313/python.exe -m sphinx -b html source build
+```
+O resultado estará em `docs/build/index.html`.
+
+- Consulte também: [FAQ.md](FAQ.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md)
+
 ## 👨‍💻 Sobre Mim
 
 Sou um desenvolvedor focado em resolver problemas reais, começando pelas minhas próprias necessidades e compartilhando soluções que podem ajudar a comunidade. Se você também busca automatizar e melhorar seus fluxos de trabalho, fique à vontade para contribuir ou adaptar este projeto!

@@ -1,0 +1,9 @@
+# Diretório inicial do projeto github-readme-downloader
+# O README será criado ao final do processo.
+
+# Ignora todos os arquivos dentro da pasta readmes
+readmes/*
+
+# Mas mantém a pasta readmes no repositório
+documents/
+!readmes/.gitkeep

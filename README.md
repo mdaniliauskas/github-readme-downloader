@@ -1,13 +1,31 @@
+# 📚 GitHub Readme Downloader
+
 [![Build Status](https://github.com/mdaniliauskas/github-readme-downloader/actions/workflows/python-app.yml/badge.svg)](https://github.com/mdaniliauskas/github-readme-downloader/actions)
 [![Coverage Status](https://coveralls.io/repos/github/mdaniliauskas/github-readme-downloader/badge.svg?branch=main)](https://coveralls.io/github/mdaniliauskas/github-readme-downloader?branch=main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-# 📚 GitHub Readme Downloader
-
 ![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
-![GitHub](https://img.shields.io/badge/GitHub-API-black?logo=github)
-![tqdm](https://img.shields.io/badge/tqdm-barra%20de%20progresso-green)
-![Testes](https://img.shields.io/badge/testes-automatizados-success)
+![Docker](https://img.shields.io/badge/Docker-ready-blue?logo=docker)
+![Docs](https://img.shields.io/badge/docs-Sphinx%20HTML-informational)
+
+Automatize o download e análise de READMEs de repositórios do GitHub com qualidade, testes, CI/CD e documentação profissional.
+
+---
+
+## 📑 Sumário
+- [Motivação](#motivacao)
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Como Usar](#como-usar)
+- [Exemplos Avançados](#exemplos-de-uso-avancado)
+- [Uso com Docker](#uso-com-docker)
+- [Testes Automatizados](#testes-automatizados)
+- [Commits Padronizados](#commits-padronizados-com-commitizen)
+- [Documentação](#documentacao)
+- [FAQ](FAQ.md)
+- [Changelog](CHANGELOG.md)
+- [Contribuindo](CONTRIBUTING.md)
+- [Sobre Mim](#sobre-mim)
+
+---
 
 ## ✨ Motivação
 
@@ -107,14 +125,6 @@ O projeto conta com testes unitários para os principais módulos, garantindo co
 
 Os testes cobrem cenários de criação de objetos, integração com a API do GitHub e geração de logs, assegurando que as principais funcionalidades estejam sempre funcionando corretamente.
 
-## 💡 Confiabilidade
-
-A aplicação foi desenvolvida com foco em qualidade, clareza e robustez. A presença de testes automatizados e cobertura de código garante que as funcionalidades principais estejam protegidas contra regressões, tornando o projeto confiável tanto para uso pessoal quanto para colaboração aberta.
-
-## 🤖 Apoio do GitHub Copilot
-
-Todo o processo de automação, refino do script e organização do projeto foi realizado com o apoio do **GitHub Copilot**, mostrando como a IA pode potencializar a produtividade e criatividade de desenvolvedores.
-
 ## Commits padronizados com Commitizen
 
 Este projeto utiliza o padrão [Conventional Commits](https://www.conventionalcommits.org/pt-br/v1.0.0/) e a ferramenta Commitizen para garantir um histórico de commits limpo e automatizar o changelog.
@@ -151,7 +161,11 @@ C:/Python313/python.exe -m sphinx -b html source build
 ```
 O resultado estará em `docs/build/index.html`.
 
+> Em breve: documentação online via GitHub Pages.
+
 - Consulte também: [FAQ.md](FAQ.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md)
+
+---
 
 ## 👨‍💻 Sobre Mim
 

@@ -2,6 +2,7 @@ import os
 import requests
 import time
 import logging
+import csv
 from tqdm import tqdm
 from models import Repository
 
@@ -18,6 +19,8 @@ class ReadmeDownloader:
     def baixar_readmes(self, repos):
         baixados = []
         nao_baixados = []
+        baixados_csv = []
+        nao_baixados_csv = []
         for repo in tqdm(repos, desc="Processando repositórios"):
             readme_found = False
             for variant in self.readme_variants:
@@ -30,6 +33,7 @@ class ReadmeDownloader:
                                 f.write(r.text)
                             msg = f"✅ Baixado: {repo.name} | {repo.url}"
                             baixados.append(msg)
+                            baixados_csv.append([repo.name, repo.url, "Baixado"])
                             print(msg)
                             readme_found = True
                             break
@@ -40,9 +44,11 @@ class ReadmeDownloader:
             if not readme_found:
                 msg = f"❌ Sem README: {repo.name} | {repo.url}"
                 nao_baixados.append(msg)
+                nao_baixados_csv.append([repo.name, repo.url, "Sem README"])
                 print(msg)
             time.sleep(self.delay)
         self._gerar_log(baixados, nao_baixados, len(repos))
+        self._gerar_csv(baixados_csv, nao_baixados_csv)
 
     def _gerar_log(self, baixados, nao_baixados, total):
         with open(self.log_file, "w", encoding="utf-8") as logf:
@@ -60,3 +66,13 @@ class ReadmeDownloader:
         print(f"Com README: {len(baixados)}")
         print(f"Sem README: {len(nao_baixados)}")
         print("\n📄 Veja o log completo e organizado em: log_readmes.txt (com separação dos repositórios com e sem README)")
+
+    def _gerar_csv(self, baixados_csv, nao_baixados_csv):
+        with open("relatorio_readmes.csv", "w", encoding="utf-8", newline="") as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(["Repositório", "URL", "Status"])
+            for row in baixados_csv:
+                writer.writerow(row)
+            for row in nao_baixados_csv:
+                writer.writerow(row)
+        print("\n📊 Relatório CSV gerado: relatorio_readmes.csv")

@@ -1,5 +1,7 @@
 # 📚 GitHub Readme Downloader
 
+[![Coverage Status](https://coveralls.io/repos/github/mdaniliauskas/github-readme-downloader/badge.svg?branch=main)](https://coveralls.io/github/mdaniliauskas/github-readme-downloader?branch=main)
+
 ![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
 ![GitHub](https://img.shields.io/badge/GitHub-API-black?logo=github)
 ![tqdm](https://img.shields.io/badge/tqdm-barra%20de%20progresso-green)

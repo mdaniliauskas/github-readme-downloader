@@ -16,7 +16,7 @@ Essa necessidade me levou a criar um script automatizado, que pode ser útil par
 
 ## 🚀 Sobre o Projeto
 
-Este projeto automatiza o processo de:
+Este projeto foi evoluído para uma arquitetura orientada a objetos e modular, facilitando manutenção, testes e expansão. Ele automatiza:
 
 1. Listar todos os repositórios públicos de um usuário do GitHub.
 2. Baixar o arquivo README de cada repositório (tentando diferentes variações de nome e branch, como `README.md`, `Readme.md`, etc, nos ramos `main` e `master`).
@@ -24,6 +24,18 @@ Este projeto automatiza o processo de:
 4. Exibir uma barra de progresso visual durante o processo.
 5. Permitir fácil adaptação para qualquer usuário do GitHub, inclusive via argumentos de linha de comando.
 6. Tratar erros de rede, usuário inexistente e limitações de API.
+
+### Estrutura do Projeto
+
+```
+github-readme-downloader/
+├── baixar_readmes.py         # Ponto de entrada (main)
+├── github_api.py             # Classe para comunicação com a API do GitHub
+├── downloader.py             # Classe para download e salvamento dos READMEs
+├── models.py                 # Classes de domínio (ex: Repository)
+├── README.md
+└── requirements.txt
+```
 
 > **Mentalidade:** Resolvi um problema real do meu dia a dia, criando uma solução que pode ajudar outras pessoas a organizar e melhorar seus próprios projetos. Isso demonstra minha capacidade de identificar necessidades, automatizar tarefas e compartilhar conhecimento.
 
@@ -36,6 +48,8 @@ Este projeto automatiza o processo de:
    ```
 2. **Instale as dependências:**
    ```bash
+   pip install -r requirements.txt
+   # ou
    pip install requests tqdm
    ```
 3. **Execute o script:**
@@ -55,7 +69,8 @@ python baixar_readmes.py -u mdaniliauskas -o ./meus_readmes -l meu_log.txt -d 1
 
 ## 💡 Funcionalidades
 
-- Organização do código em funções e uso de argparse.
+- Arquitetura orientada a objetos e modular.
+- Organização do código em módulos e classes.
 - Barra de progresso com tqdm.
 - Logging estruturado e tratamento de exceções.
 - Checagem de README em diferentes variações de nome e branch.

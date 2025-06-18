@@ -32,3 +32,7 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         path-to-lcov: coverage.xml
+    - name: Check commit message format (Commitizen)
+      run: |
+        pip install commitizen
+        commitizen check --rev-range origin/main..HEAD

@@ -115,6 +115,31 @@ A aplicação foi desenvolvida com foco em qualidade, clareza e robustez. A pres
 
 Todo o processo de automação, refino do script e organização do projeto foi realizado com o apoio do **GitHub Copilot**, mostrando como a IA pode potencializar a produtividade e criatividade de desenvolvedores.
 
+## Commits padronizados com Commitizen
+
+Este projeto utiliza o padrão [Conventional Commits](https://www.conventionalcommits.org/pt-br/v1.0.0/) e a ferramenta Commitizen para garantir um histórico de commits limpo e automatizar o changelog.
+
+**Como fazer um commit:**
+
+1. Instale as dependências do projeto (inclui o Commitizen):
+   ```sh
+   pip install -r requirements.txt
+   ```
+2. Use o Commitizen para criar commits:
+   ```sh
+   C:/Python313/python.exe -m commitizen commit
+   ```
+   Siga o assistente interativo para escolher o tipo de commit e preencher a mensagem corretamente.
+
+**Exemplo de mensagem válida:**
+```
+feat(docs): adiciona integração do Commitizen ao CI
+```
+
+Commits fora do padrão serão rejeitados pelo CI.
+
+Para mais detalhes, consulte o arquivo `.cz.yaml` e a documentação do Commitizen.
+
 ## 👨‍💻 Sobre Mim
 
 Sou um desenvolvedor focado em resolver problemas reais, começando pelas minhas próprias necessidades e compartilhando soluções que podem ajudar a comunidade. Se você também busca automatizar e melhorar seus fluxos de trabalho, fique à vontade para contribuir ou adaptar este projeto!

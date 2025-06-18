@@ -1,6 +1,8 @@
-# 📚 GitHub Readme Downloader
-
+[![Build Status](https://github.com/mdaniliauskas/github-readme-downloader/actions/workflows/python-app.yml/badge.svg)](https://github.com/mdaniliauskas/github-readme-downloader/actions)
 [![Coverage Status](https://coveralls.io/repos/github/mdaniliauskas/github-readme-downloader/badge.svg?branch=main)](https://coveralls.io/github/mdaniliauskas/github-readme-downloader?branch=main)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+# 📚 GitHub Readme Downloader
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
 ![GitHub](https://img.shields.io/badge/GitHub-API-black?logo=github)

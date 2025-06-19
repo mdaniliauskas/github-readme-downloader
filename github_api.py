@@ -3,13 +3,30 @@ import logging
 from models import Repository
 
 class GitHubAPI:
-    """Responsável por interagir com a API do GitHub."""
+    """
+    Responsável por interagir com a API do GitHub.
+
+    Args:
+        user (str): Nome de usuário do GitHub.
+    """
     def __init__(self, user):
+        """
+        Inicializa a API com o nome de usuário.
+
+        Args:
+            user (str): Nome de usuário do GitHub.
+        """
         self.user = user
         self.api_url = f"https://api.github.com/users/{user}/repos"
         self.headers = {"Accept": "application/vnd.github.v3+json"}
 
     def get_repositories(self):
+        """
+        Busca todos os repositórios públicos do usuário.
+
+        Returns:
+            list[Repository]: Lista de objetos Repository.
+        """
         repos = []
         page = 1
         while True:

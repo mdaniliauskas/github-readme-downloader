@@ -1,5 +1,11 @@
 class Repository:
-    """Representa um repositório do GitHub."""
+    """
+    Representa um repositório do GitHub.
+
+    Attributes:
+        name (str): Nome do repositório.
+        url (str): URL do repositório.
+    """
     def __init__(self, name, url):
         self.name = name
         self.url = url

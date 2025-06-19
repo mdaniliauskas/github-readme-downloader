@@ -2,13 +2,30 @@ import os
 import requests
 import time
 import logging
-import csv
 from tqdm import tqdm
 from models import Repository
+import csv
 
 class ReadmeDownloader:
-    """Responsável por baixar e salvar os READMEs dos repositórios."""
+    """
+    Responsável por baixar e salvar os READMEs dos repositórios.
+
+    Args:
+        user (str): Nome de usuário do GitHub.
+        output_dir (str): Diretório de saída dos arquivos README.
+        log_file (str): Caminho do arquivo de log.
+        delay (float): Delay entre requisições (segundos).
+    """
     def __init__(self, user, output_dir, log_file, delay=0.5):
+        """
+        Inicializa o downloader.
+
+        Args:
+            user (str): Nome de usuário do GitHub.
+            output_dir (str): Diretório de saída dos arquivos README.
+            log_file (str): Caminho do arquivo de log.
+            delay (float, opcional): Delay entre requisições (segundos). Default: 0.5
+        """
         self.user = user
         self.output_dir = output_dir
         self.log_file = log_file
@@ -17,6 +34,12 @@ class ReadmeDownloader:
         os.makedirs(self.output_dir, exist_ok=True)
 
     def baixar_readmes(self, repos):
+        """
+        Baixa os READMEs dos repositórios fornecidos.
+
+        Args:
+            repos (list[Repository]): Lista de repositórios para baixar os READMEs.
+        """
         baixados = []
         nao_baixados = []
         baixados_csv = []
@@ -51,6 +74,14 @@ class ReadmeDownloader:
         self._gerar_csv(baixados_csv, nao_baixados_csv)
 
     def _gerar_log(self, baixados, nao_baixados, total):
+        """
+        Gera o log de execução do processo.
+
+        Args:
+            baixados (list): Lista de repositórios baixados.
+            nao_baixados (list): Lista de repositórios sem README.
+            total (int): Total de repositórios processados.
+        """
         with open(self.log_file, "w", encoding="utf-8") as logf:
             logf.write("# Repositórios com README baixado\n")
             for line in baixados:
@@ -68,6 +99,13 @@ class ReadmeDownloader:
         print("\n📄 Veja o log completo e organizado em: log_readmes.txt (com separação dos repositórios com e sem README)")
 
     def _gerar_csv(self, baixados_csv, nao_baixados_csv):
+        """
+        Gera o relatório CSV com o status dos repositórios.
+
+        Args:
+            baixados_csv (list): Linhas de repositórios baixados.
+            nao_baixados_csv (list): Linhas de repositórios sem README.
+        """
         with open("relatorio_readmes.csv", "w", encoding="utf-8", newline="") as csvfile:
             writer = csv.writer(csvfile)
             writer.writerow(["Repositório", "URL", "Status"])

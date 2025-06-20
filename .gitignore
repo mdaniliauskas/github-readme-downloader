@@ -8,14 +8,7 @@ readmes/*
 documents/
 !readmes/.gitkeep
 
-# Pasta de materiais de estudo e uso pessoal
 apoio/
-material_entrevista/
-
-# Logs gerados
-*.log
-log_readmes.txt
-relatorio_readmes.csv
 
 # Python
 __pycache__/
@@ -45,35 +38,4 @@ htmlcov/
 .tox/
 .coverage.*
 .cache
-nosetests.xml
 coverage.xml
-
-# VS Code
-.vscode/
-*.code-workspace
-
-# IDEs
-.idea/
-*.swp
-*.swo
-.project
-.classpath
-.settings/
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Sphinx documentation
-docs/build/
-docs/_build/
-
-# OS specific
-.DS_Store
-Thumbs.db
-desktop.ini
